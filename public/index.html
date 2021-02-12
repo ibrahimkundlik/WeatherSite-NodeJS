@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<link rel="icon" type="image/png" sizes="64x64" href="../images/icon.png" />
+		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="main-container">
+			<header class="header-cont">
+				<h1 class="main-title">Weather</h1>
+				<div class="search-logo">
+					<img src="./images/location.png" alt="search logo" />
+				</div>
+				<form class="location-form">
+					<input
+						placeholder="Location"
+						type="text"
+						name="address"
+						id="address"
+					/>
+					<button type="submit" class="submit">Search</button>
+					<div class="weather-err"></div>
+				</form>
+			</header>
+
+			<div class="current">
+				<div class="main-info">
+					<div class="temp-info">
+						<h2 class="location">Mumbai</h2>
+						<p class="date">Fri, 12 Feb</p>
+						<p class="temp">5°C</p>
+					</div>
+					<div class="temp-cont">
+						<div class="weather-icon-cont">
+							<img
+								src="http://openweathermap.org/img/wn/10d@2x.png"
+								alt="weather icon"
+							/>
+						</div>
+						<p class="temp-desc">scattered clouds</p>
+					</div>
+				</div>
+				<div class="other-info">
+					<div class="l-info">
+						<h3 class="info-val">-2°C</h3>
+						<p class="info-param">Feels like</p>
+					</div>
+					<div class="l-info">
+						<h3 class="info-val">80%</h3>
+						<p class="info-param">Humidity</p>
+					</div>
+					<div class="l-info">
+						<h3 class="info-val">05:27</h3>
+						<p class="info-param">Sunrise</p>
+					</div>
+					<div class="l-info">
+						<h3 class="info-val">20:38</h3>
+						<p class="info-param">Sunset</p>
+					</div>
+					<div class="l-info">
+						<h3 class="info-val">4.63m/s</h3>
+						<p class="info-param">Wind speed</p>
+					</div>
+					<div class="l-info">
+						<h3 class="info-val">-8°C</h3>
+						<p class="info-param">Dew point</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="daily-cont">
+				<h3 class="daily-header">8-Day Forecast</h3>
+				<div class="daily">
+					<p class="daily-date">Fri, 12 Feb</p>
+					<div class="daily-icon">
+						<img
+							src="http://openweathermap.org/img/wn/10d@2x.png"
+							alt="weather icon"
+						/>
+					</div>
+					<p class="daily-temp">7°C</p>
+					<p class="daily-desc">light snow</p>
+				</div>
+				<div class="daily">
+					<p class="daily-date">Fri, 12 Feb</p>
+					<div class="daily-icon">
+						<img
+							src="http://openweathermap.org/img/wn/10d@2x.png"
+							alt="weather icon"
+						/>
+					</div>
+					<p class="daily-temp">7°C</p>
+					<p class="daily-desc">light snow</p>
+				</div>
+				<div class="daily">
+					<p class="daily-date">Fri, 12 Feb</p>
+					<div class="daily-icon">
+						<img
+							src="http://openweathermap.org/img/wn/10d@2x.png"
+							alt="weather icon"
+						/>
+					</div>
+					<p class="daily-temp">7°C</p>
+					<p class="daily-desc">light snow</p>
+				</div>
+			</div>
+
+			<footer class="credits">
+				<div class="credit">
+					Search icon provided by
+					<a href="https://www.freepik.com" title="Freepik" target="_blank"
+						>Freepik</a
+					>
+					from
+					<a href="https://www.flaticon.com/" title="Flaticon" target="_blank"
+						>Flaticon</a
+					>
+				</div>
+				<div class="credit">
+					Background images provided by
+					<a href="https://www.vecteezy.com/free-vector/nature" target="_blank"
+						>Vecteezy</a
+					>
+				</div>
+				<div class="credit">
+					Created by
+					<a href="https://github.com/ibrahimkundlik" target="_blank"
+						>Ibrahim</a
+					>
+				</div>
+			</footer>
+		</div>
+		<script src="../js/app.js"></script>
+	</body>
+</html>
