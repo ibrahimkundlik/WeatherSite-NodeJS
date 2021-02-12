@@ -1,11 +1,11 @@
 {
-	"name": "WeatherSite",
+	"name": "weathersite",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"start": "node src/app.js",
-		"dev": "nodemon src/app.js -e js,hbs"
+		"dev": "nodemon src/app.js -e js,html,css"
 	},
 	"keywords": [],
 	"author": "",
@@ -16,6 +16,6 @@
 		"postman-request": "^2.88.1-postman.28"
 	},
 	"devDependencies": {
-		"nodemon": "^1.2.0"
+		"nodemon": "^1.19.4"
 	}
 }
