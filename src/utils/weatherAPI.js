@@ -5,7 +5,7 @@ const weatherAPI = (geoData, callback) => {
 
 	request({ url, json: true }, (error, response) => {
 		if (error) {
-			callback("Unable to connect to weather service.");
+			callback("Unable to connect to weather service !");
 		} else {
 			const data = response.body;
 			if (data.cod === 401) {

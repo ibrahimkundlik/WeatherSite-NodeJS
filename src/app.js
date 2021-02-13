@@ -21,7 +21,7 @@ hbs.registerPartials(partialPath);
 app.get("/weather", (req, res) => {
 	if (!req.query.address) {
 		return res.send({
-			error: "Please provide address in input!",
+			error: "Please provide location in above input box !",
 		});
 	}
 	geocodeAPI(req.query.address, (error, geoData) => {
