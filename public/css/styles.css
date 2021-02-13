@@ -4,8 +4,8 @@
 }
 :root {
 	--primary: #fff;
-	--secondary: #ddd;
-	--red: #fda0a0;
+	--red: #ec6e4c;
+	--bg-image: url("../images/night1.jpg");
 }
 img {
 	width: 100%;
@@ -22,8 +22,10 @@ body {
 	color: var(--primary);
 }
 .main-container {
+	padding: 2rem 1.5rem 0.8rem 1.5rem;
 	width: 100%;
-	padding: 2rem 1.5rem;
+	max-width: 450px;
+	margin: 0 auto;
 }
 .main-container::before {
 	content: "";
@@ -32,10 +34,12 @@ body {
 	left: 0%;
 	width: 100vw;
 	height: 100vh;
-	background-color: #100b23;
-	background-image: url("../images/day.jpg");
+	background: linear-gradient(rgb(96, 96, 96), rgb(96, 96, 96)), var(--bg-image);
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		var(--bg-image);
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-blend-mode: darken;
 	z-index: -1;
 }
 
@@ -98,7 +102,7 @@ body {
 }
 .submit:hover {
 	transform: scale(1.1);
-	background-color: #a9ffe5;
+	background-color: var(--red);
 }
 .weather-err {
 	flex-basis: 100%;
@@ -130,9 +134,6 @@ body {
 /* CURRENT MAIN */
 .weather-icon-cont {
 	width: 100px;
-	transform: translateY(-25px);
-}
-.temp-desc {
 	transform: translateY(-25px);
 }
 .main-info {
@@ -167,6 +168,10 @@ body {
 	font-weight: 300;
 	margin-top: 1rem;
 }
+.temp-desc {
+	transform: translateY(-25px);
+	text-transform: lowercase;
+}
 
 /* CURRENT OTHER */
 .other-info {
@@ -195,24 +200,31 @@ body {
 .daily-header {
 	text-align: center;
 	margin-bottom: 1.5rem;
+	width: 100%;
 }
 .daily {
-	width: 95%;
+	width: 90%;
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 1.2rem;
 	border: 1.5px solid var(--primary);
 	border-radius: 10px;
 	margin-bottom: 0.5rem;
-	padding: 0 0.5rem;
+	padding: 0 1rem;
 }
 .daily-icon {
 	width: 70px;
 }
 .daily-temp {
 	font-weight: 600;
+	font-size: 1.4rem;
+}
+.daily-desc {
+	flex-basis: 100%;
+	text-align: center;
+	transform: translateY(-50%);
 }
 
 /* FOOTER */
@@ -221,10 +233,145 @@ body {
 	padding: 1.5rem 0 0.5rem 0;
 	margin-top: 2.5rem;
 	border-top: 2px solid var(--primary);
+	font-size: 0.9rem;
 }
 .credit {
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.8rem;
 }
 .credits a {
-	color: #db5d2b;
+	color: var(--red);
+	font-weight: 600;
+}
+
+/* TABLET LAYOUT */
+@media screen and (min-width: 768px) {
+	html {
+		font-size: 18px;
+	}
+	.main-container {
+		max-width: 800px;
+		overflow-x: hidden;
+	}
+	.main-info {
+		max-width: 63%;
+		margin: 0 auto;
+	}
+	.search-logo {
+		margin-right: 2rem;
+	}
+	.mb {
+		margin-bottom: 5rem;
+	}
+	.header-cont {
+		padding: 0 1rem;
+	}
+	.location-form {
+		width: 40%;
+	}
+	.show-form {
+		transform: translate(100%, 0%);
+	}
+	.weather-err {
+		position: absolute;
+		top: 80%;
+		width: 100%;
+	}
+	.other-info {
+		padding-top: 2rem;
+	}
+	.l-info {
+		flex-basis: 16%;
+	}
+	.daily-cont {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.daily {
+		flex-basis: 44%;
+	}
+}
+
+/* DESKTOP LAYOUT */
+@media screen and (min-width: 992px) {
+	html {
+		font-size: 20px;
+	}
+	.main-container {
+		max-width: 1100px;
+		padding: 3rem 3rem 0 3rem;
+	}
+	.location-form {
+		transform: translate(120%, 0%);
+	}
+	.close-form::before {
+		content: "";
+	}
+	.mb {
+		margin-bottom: 0;
+	}
+	.header-cont {
+		margin-bottom: 4.5rem;
+	}
+	.search-logo {
+		cursor: default;
+	}
+	.current {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.main-info {
+		max-width: 100%;
+		width: 100%;
+		flex-basis: 50%;
+	}
+	.other-info {
+		border: none;
+		border-left: 2px solid var(--primary);
+		justify-content: space-evenly;
+		flex-basis: 50%;
+		padding-left: 0.7rem;
+	}
+	.l-info {
+		flex-basis: 30%;
+	}
+	.other-info div:nth-child(4) {
+		order: 6;
+	}
+	.header-cont {
+		padding: 0;
+	}
+	.weather-icon-cont {
+		transform: translateY(-36%);
+	}
+	.temp-cont {
+		justify-content: space-evenly;
+	}
+	.temp-desc {
+		padding: 0 0.5rem;
+	}
+	.daily-header {
+		font-size: 1.5rem;
+	}
+	.daily {
+		flex-basis: 24%;
+		padding: 0;
+		justify-content: center;
+		height: 160px;
+	}
+	.daily-date {
+		flex-basis: 100%;
+		text-align: center;
+	}
+	.daily-desc {
+		transform: translateY(-25%);
+		font-size: 0.9rem;
+	}
+	.daily-temp {
+		font-size: 1.8rem;
+		margin-right: 1rem;
+	}
 }
