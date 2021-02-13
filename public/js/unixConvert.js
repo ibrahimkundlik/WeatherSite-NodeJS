@@ -23,15 +23,14 @@ const unixConvert = (unix) => {
 		"Saturday",
 	];
 	const date = new Date(unix * 1000);
-	const time = date.toLocaleString("en-GB", {
-		hour: "2-digit",
-		minute: "2-digit",
-		hour12: false,
-	});
+	let hour = date.getUTCHours();
+	let mins = date.getUTCMinutes();
+	if (hour < 10) hour = "0" + hour;
+	if (mins < 10) mins = "0" + mins;
 
 	return [
 		`${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`,
-		`${time}`,
+		`${hour}:${mins}`,
 	];
 };
 
