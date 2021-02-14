@@ -35,13 +35,8 @@ const fetchAPI = (url) => {
 				);
 				displayDaily(data.weatherData.daily);
 				input.value = "";
+				input.blur();
 				weatherErr.innerHTML = "";
-				document.documentElement.style.setProperty(
-					"--bg-image",
-					`url("../images/night${
-						Math.floor(Math.random() * (3 - 1 + 1)) + 1
-					}.jpg")`
-				);
 			}
 		});
 };
@@ -93,12 +88,12 @@ const displayDaily = (daily) => {
 		dailyHTML += `
 	<div class="daily">
 		<p class="daily-date">${unixConvert(each.dt)[0]}</p>
+		<p class="daily-temp">${each.temp.day}°C</p>
 		<div class="daily-icon">
 			<img src="http://openweathermap.org/img/wn/${
 				each.weather[0].icon
 			}@2x.png" alt="icon" />
 		</div>
-		<p class="daily-temp">${each.temp.day}°C</p>
 		<p class="daily-desc">${each.weather[0].description}</p>
 	</div>
 	`;
