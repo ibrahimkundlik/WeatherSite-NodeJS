@@ -3,7 +3,6 @@ const express = require("express");
 const hbs = require("hbs");
 const geocodeAPI = require("./utils/geocodeAPI");
 const weatherAPI = require("./utils/weatherAPI");
-const wakeUpDyno = require("./dyno.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,8 +17,6 @@ app.use(express.static(dirPath));
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialPath);
-
-const APP_URL = "https://weather-site-ik.herokuapp.com/";
 
 app.get("/weather", (req, res) => {
 	if (!req.query.address) {
@@ -47,5 +44,4 @@ app.get("*", (req, res) => {
 
 app.listen(port, () => {
 	console.log("Express server started.");
-	wakeUpDyno(APP_URL);
 });

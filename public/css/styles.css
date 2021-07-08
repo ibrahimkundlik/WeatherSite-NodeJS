@@ -250,6 +250,11 @@ body {
 	left: 50%;
 	transform: translate(-50%, -60%);
 }
+.error-page-mssg {
+	width: 100%;
+	color: #f03;
+	text-align: center;
+}
 
 /* TABLET LAYOUT */
 @media screen and (min-width: 768px) {
